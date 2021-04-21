@@ -8,6 +8,9 @@ fi
 if ! hash screen 2>/dev/null; then
     sudo apt install screen -y && sudo apt upgrade && sudo apt clean
 fi
+if [ ! -d "INIT_Spigot" ]; then
+    clone git https://github.com/indekt/INIT_Spigot.git
+fi
 if [ ! -d "work" ]; then
     curl -v -o ~/BuildTools.jar https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
 git config --global --unset core.autocrlf
